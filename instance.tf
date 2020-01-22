@@ -32,7 +32,11 @@ resource "aws_instance" "streisand" {
   }
 
   provisioner "local-exec" {
-    command = "cd streisand && deploy/streisand-existing-cloud-server.sh --ip-address ${aws_instance.streisand.*.public_ip} --site-config ../inventory.yml"
+    command = "echo ${aws_instance.streisand.public_ip} > private_ip.txt"
+  }
+
+  provisioner "local-exec" {
+    command = "./provision.sh"
   }
 
 }

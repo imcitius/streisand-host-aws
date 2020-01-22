@@ -3,3 +3,4 @@ terraform.tfstate*
 tests
 streisand
 *.tfvars
+private_ip.txt
