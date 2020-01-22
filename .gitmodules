@@ -1,0 +1,3 @@
+[submodule "streisand"]
+	path = streisand
+	url = https://github.com/StreisandEffect/streisand.git

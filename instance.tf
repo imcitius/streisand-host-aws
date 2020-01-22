@@ -30,4 +30,9 @@ resource "aws_instance" "streisand" {
   tags = {
     Name = "streisand instance"
   }
+
+  provisioner "local-exec" {
+    command = "cd streisand && deploy/streisand-existing-cloud-server.sh --ip-address ${aws_instance.streisand.*.public_ip} --site-config ../inventory.yml"
+  }
+
 }

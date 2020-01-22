@@ -1,13 +1,13 @@
 provider "aws" {
-    region = "eu-central-1"
+    region = aws_region
 }
 
 terraform {
   backend "remote" {
-    organization = "citius"
+    organization = tf_cloud_organization
 
     workspaces {
-      name = "learn-1"
+      name = tf_cloud_workspace
     }
   }
 }
