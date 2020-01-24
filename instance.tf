@@ -17,7 +17,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "streisand" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
-  key_name = "citius"
+  key_name = ssh_key_name
   associate_public_ip_address = true
   private_ip = "10.0.0.12"
 
